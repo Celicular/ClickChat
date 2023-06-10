@@ -1,41 +1,45 @@
 import React, { useState } from "react";
 import './login.css';
+import {Link} from 'react-router-dom'
 
 
 
 
 export default function Login() {
-  function log(data){
-    console.log(data);
-  }
   const [email, setEmail] = useState('')
   const [pwd, setPwd] = useState('')
+
+  function emailChangeHandler (event){
+    setEmail(event.target.value)
+  }
+
+  function pwdChangeHandler(event){
+    setPwd(event.target.value)
+  }
+  
+  function handleSubmit(){
+    const data = {
+      email : email,
+      pwd : pwd
+    }
+  }
   return (
-      <div className="container">
-        <div className="my-3">
-          <input
-            onChange={(event) => {
-              setEmail(email + event.target.value);
-              log(email);
-            }}
-            type="email"
-            className="eml form-control my-3"
-            id="email"
-            value={email}
-            placeholder="Enter Email"
-          />
-          <input
-            onChange={(e) => {
-              setPwd(pwd + e.target.value);
-              log(pwd);
-            }}
-            type="password"
-            className="form-control my-3"
-            id="password"
-            value={pwd}
-            placeholder="Enter Password"
-          />
-        </div>
-      </div>
+    <div className="container">
+  <form >
+    <div className="form-group">
+      <label htmlFor="exampleInputEmail1">Email address</label>
+      <input type="email" className="form-control" id="email" value={email} onChange={emailChangeHandler} placeholder="Enter email"/>
+      <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div className="form-group">
+      <label htmlFor="exampleInputPassword1">Password</label>
+      <input type="password" className="form-control" id="password" value={pwd} onChange={pwdChangeHandler} placeholder="Password"/>
+    </div>
+    <div className="text-center">
+      <button type="submit" className="btn btn-primary my-2 text-center" onClick={handleSubmit}>Submit</button><br />
+      <small><Link to="/register">Click here to register</Link></small>
+    </div>
+  </form>
+    </div>
   );
 }
