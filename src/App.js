@@ -2,8 +2,8 @@
 import './App.css';
 import Login from './components/Login';
 import Register from './components/Register'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
+import ConfirmRegister from './components/confirmRegister';
+import { BrowserRouter, Route, Routes,} from 'react-router-dom';
 function App() {
   return (
     <>
@@ -14,6 +14,8 @@ function App() {
           <Route exact path="/register" element={<Register/>}>
           </Route>
           <Route exact path="/" element={<Login/>}>
+          </Route>
+          <Route exact path="/confirmRegister" element={<ConfirmRegister/>}>
           </Route>
         </Routes>
       </BrowserRouter>

@@ -1,5 +1,97 @@
-.container{
-    width:35rem;
+.container-1{
+    width:30rem;
+    height: 30rem;
+    background-color: white;
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); */
+    /* box-shadow: hover; */
+    position: relative;
+    left: 24%;
+    border-radius: 2%;
+    padding-inline: 2rem;
+    padding-block: 2rem;
+    top: -4rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
+.brand img{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 20%;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    left: 10rem;
+}
+
+.brand-name{
+    position: relative;
+    left: 10rem;
+    top: 1rem;
+    color: rgb(63, 63, 63);
+}
+.brand-name h2{
+    color: rgb(8, 8, 218);
+}
+
+.nav-item{
+    position: absolute;
+    left: 81%;
+    bottom: 20%;
+    border: solid 2px rgb(31, 125, 202);
+    background-color: rgb(31, 125, 202);
+    width: 8rem;
+    height: 2.5rem;
+    font-size: 14px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-item:hover{
+    background-color: darkblue;
+}
+.nav-link p{
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    position: relative;
+    top: 1vh;
+}
+
+.bg-image img{
+    position: absolute;
+    width: 29rem;
+    height: 29rem;
+    border-radius: 10%;
+    top: 8rem;
+    left: 10rem;
+}
+
+
+.col{
+    margin-top: 1rem;
+    color: #585858;
+}
+.col small{
+    color: #585858;
+    font-size: 16px;
+}
+
+.container-1 label{
+    font-size: 14px;
+    color: #585858;
+}
+.container-1 .btn{
+    position: absolute;
+    left: 69%;
+    width: 25%;
+    top: 73%;
+}
+
+.container-1 .fgt-pwd{
+    position: absolute;
+    right: 64%;
+    width: 30%;
+    bottom: 5rem;
+    /* margin-top: 1.5rem; */
+}
 

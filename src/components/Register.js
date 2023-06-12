@@ -1,6 +1,6 @@
 import './register.css'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 
 export default function Register() {
 
@@ -10,6 +10,7 @@ export default function Register() {
   const [gender, setGender] = useState('');
   const [country, setCountry] = useState('');
 
+  const navigate = useNavigate();
   function getCC(number) {
     const parts = number.split(' ');
     return parts[0];
@@ -36,16 +37,33 @@ export default function Register() {
     const words = sentence.trim().split(/[.\s]+/); 
     return words[0];
   }
-
+  function mobileNoData(mob){
+    const words = mob.trim().split(/[.\s]+/); 
+    return words[1];
+  }
+  function generateRandomString(length) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+  
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      result += characters[randomIndex];
+    }
+  
+    return result;
+  }
   function registerSubmit(event) {
     event.preventDefault();
     let firstName = getFirstWord(name);
     let contCode = getCC(mobileNo);
+    let mobileNoReal = mobileNoData(mobileNo);
+    let personalId = generateRandomString(64);
     let data = {
+      personalId : personalId,
       firstName : firstName,
       name : name,
       email : email,
-      mobNo : mobileNo,
+      mobNo : mobileNoReal,
       countryCode : contCode,
       gender : gender, 
       country : country
@@ -54,7 +72,7 @@ export default function Register() {
       alert("Invalid email address");
       return;
     }
-    if (!mobileIsValid(data.mobNo)) {
+    if (!mobileIsValid(mobileNo)) {
       alert("Invalid mobile number");
       return;
     }
@@ -66,15 +84,16 @@ export default function Register() {
       alert("Please select a gender");
       return;
     }
-
-    console.log(data);
+    let tempData = JSON.stringify(data);
+    sessionStorage.setItem('temp', tempData);
+    navigate('/confirmRegister')
   }
 
   
 
   return (
     <>
-      <div className="container my-5">
+      <div className="container container-2 my-5">
         <form>
           <div className="form-group">
             <label htmlFor="email">Email address</label>
@@ -184,7 +203,7 @@ export default function Register() {
                 className="btn btn-primary my-2 text-center"
                 onClick={registerSubmit}
               >
-                Submit
+                Register
               </button>
               <br />
               <small>
