@@ -9,9 +9,31 @@ export default function ConfirmRegister() {
     const [password, setPassword] = useState('')
     const [confPassword, setConfPassword] = useState('')
     const [age, setAge] = useState('')
+    let finalData = {}
+
+    function uploadData(){
+
+    }
+
+    function confirmRegistration(){
+      if(password === confPassword){
+        finalData = {
+          ...data,
+          age : age,
+          password : password
+          }
+          let tempData = JSON.stringify(finalData);
+          sessionStorage.setItem('temp', tempData); 
+          uploadData();
+      }
+      else{
+          alert("Confirm Password and Password dont match!")
+      }
+      
+    }
   return (
     <>
-        <div className="container container-3">
+<div className="container container-3">
   <div className="row">
     <div className="col">
       <h2 className="heading my-3">Hi {name}</h2>
@@ -64,6 +86,9 @@ export default function ConfirmRegister() {
     </div>
     
   </form>
+  <div className="submit">
+    <button className="btn btn-outline-primary "onClick={confirmRegistration}>Confirm Registration</button>
+  </div>
 </div>
     </>
   )

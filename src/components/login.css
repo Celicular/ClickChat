@@ -70,6 +70,7 @@
 .col{
     margin-top: 1rem;
     color: #585858;
+    width: 28rem;
 }
 .col small{
     color: #585858;
@@ -91,7 +92,25 @@
     position: absolute;
     right: 64%;
     width: 30%;
-    bottom: 5rem;
     /* margin-top: 1.5rem; */
+    bottom: 1rem;
+}
+
+.form{
+    position: relative;
+    top: 6rem;
+    right: 1rem;
+    width: 28rem;
+}
+
+.login {
+    position: relative;
+    right: 2.5rem;
+}
+.login small{
+    top: 1.5rem;
+}
+.login .btn{
+    left: 22rem;
 }
 

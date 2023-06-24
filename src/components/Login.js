@@ -49,7 +49,7 @@ export default function Login() {
         </div>
     </nav>
     <div className="bg-image">
-      <img src={loginbg}/>
+      <img src={loginbg} alt=''/>
     </div>
     {/* main form */}
     <div className="container container-1 my-5">
@@ -60,21 +60,23 @@ export default function Login() {
           <hr/>
         </div>
       </div>
-      <form className="my-3">
-        <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Email address</label>
-          <input type="email" className="form-control" id="email" value={email} onChange={emailChangeHandler} placeholder="Enter email"/>
-          <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div className="form-group">
-          <label htmlFor="exampleInputPassword1">Password</label>
-          <input type="password" className="form-control" id="password" value={pwd} onChange={pwdChangeHandler} placeholder="Password"/>
-        </div>
-        <div className="text-center my-4">
-          <button type="submit" className="btn btn-outline-primary my-2" onClick={loginSubmit}>Login ✓</button><br />
-          <small className="fgt-pwd"><Link to="/forgotPwd">Forgot Your Password?</Link></small>
-        </div>
-      </form>
+      <div className="container form">
+        <form className="my-3">
+          <div className="form-group">
+            <label htmlFor="exampleInputEmail1">Email address</label>
+            <input type="email" className="form-control" id="email" value={email} onChange={emailChangeHandler} placeholder="Enter email"/>
+            <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div className="form-group">
+            <label htmlFor="exampleInputPassword1">Password</label>
+            <input type="password" className="form-control" id="password" value={pwd} onChange={pwdChangeHandler} placeholder="Password"/>
+          </div>
+          <div className="login text-center my-4">
+            <button type="submit" className="btn btn-outline-primary my-2" onClick={loginSubmit}>Login ✓</button><br />
+            <small className="fgt-pwd"><Link to="/forgotPwd">Forgot Your Password?</Link></small>
+          </div>
+        </form>
+      </div>
     </div>
     </>
   );

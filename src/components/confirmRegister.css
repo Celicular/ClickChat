@@ -1,13 +1,35 @@
 .container-3{
     width:50rem;
-    height: 35rem;
+    height: 34rem;
     background-color: whitesmoke;
     box-shadow: 0 7px 9px rgba(0, 0, 0, 0.4);
     position: relative;
+    display: flex;
+    align-items: top;
+    justify-content: center;
     top: 2rem;
     border-radius: 2%;
-    justify-content: center;
+}
+.container-3 form{
+    position: relative;
+    top: 7rem;
+    right: 18rem;
+}
+.row{
+    position: absolute;
 }
 .element{
-    width: 23rem;
+    width: 38rem;
+}
+
+.submit{
+    position: absolute;
+    top: 80%;
+}
+.submit button{
+    width: auto;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
